@@ -34,7 +34,7 @@ module.exports = {
                     .setLabel(`Kurulum Hakkında Bilmeniz Gerekenler`)
                     .setEmoji(`ℹ️`)
                     .setStyle(ButtonStyle.Link)
-                    .setURL("https://github.com/Bes-js")
+                    .setURL("https://github.com/Bes-js/advanced-v14-register")
             )
 
 

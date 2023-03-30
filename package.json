@@ -14,7 +14,7 @@
   "dependencies": {
     "@discordjs/formatters": "^0.2.0",
     "@discordjs/voice": "^0.15.0",
-    "canvafy": "^0.0.4",
+    "canvafy": "^0.0.5",
     "canvas": "^2.11.0",
     "discord.js": "^14.8.0",
     "five.db": "^0.0.8",

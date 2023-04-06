@@ -15,9 +15,9 @@ module.exports = {
         if(!unregisterRoles.length > 0)throw new SyntaxError("Kayıtsız Rolleri Ayarlı Değil!");
         if(!staffData.some(beş => message.member.roles.cache.get(beş)) && !message.member.permissions.has(PermissionFlagsBits.Administrator))return message.reply({ embeds: [beş_embed.setDescription(`> **Komutu Kullanmak İçin Yetkin Bulunmamakta!**`)] }).sil(5);
         const kyapan = await client.users.fetch(message.author.id)
+        if(!member) return message.reply({ embeds: [beş_embed.setDescription(`> **Geçerli Bir User Belirt!**`)] }).sil(5);
         if(member.id == message.author.id) return message.reply({ embeds: [beş_embed.setDescription(`> **Kendine İşlem Uygulayamazsın!**`)]}).sil(5);
         if(member.user.bot) return message.reply({ embeds: [beş_embed.setDescription(`> **Bir Bot'a İşlem Uygulayamazsın!**`)]}).sil(5);
-        if(!member) return message.reply({ embeds: [beş_embed.setDescription(`> **Geçerli Bir User Belirt!**`)] }).sil(5);
         db.push(`isimler-${member.id}`, `${member.user.tag} (Kayıtsız <t:${Math.floor(Date.now() / 1000)}> - ${kyapan.tag})`);
         db.push(`kayıtlar-${message.author.id}`, `${member.user.tag} (Kayıtsız <t:${Math.floor(Date.now() / 1000)}>)`);
         await message.guild.members.cache.get(member.id).setNickname(`${beş_config.kayitsizHesapIsim}`);

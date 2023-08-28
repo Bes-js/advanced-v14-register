@@ -40,7 +40,7 @@ if (!member) return message.reply({ embeds:[beş_embed.setDescription(`> **Geçe
 if(member.id == message.author.id) return message.reply({ embeds: [beş_embed.setDescription(`> **Kendine İşlem Uygulayamazsın!**`)]}).sil(5);
 if(member.user.bot) return message.reply({ embeds: [beş_embed.setDescription(`> **Bir Bot'a İşlem Uygulayamazsın!**`)]}).sil(5);
 if(db.has("five-welcome-tagmode")){
-if (db.has("five-welcome-tagmode") && !tagData.some(tag => member.user.tag.includes(tag))) {
+if (db.has("five-welcome-tagmode") && !tagData.some(tag => member.user.displayName.includes(tag))) {
 return message.reply({ embeds: [beş_embed.setDescription(`> **Taglı Alım Açık Olduğu İçin Sadece Taglı Kullanıcılar Kayıt Edilebilir!**`)] }).sil(5)
 }}
 if (!name) return message.reply({ embeds:[beş_embed.setDescription(`> **Geçerli Bir İsim Belirt!**`)]}).sil(5);
@@ -69,7 +69,7 @@ if (value === "man") {
 db.add(`erkek-${message.author.id}`, 1)
 db.push(`isimler-${member.id}`, `\`${beş_config.tagSymbol} ${Name2}${age ? ` ${beş_config.symbolBeş} ${age}` : ""}\` (${manRoles.map((bes) => `<@&${bes}>`).join(",")} <t:${Math.floor(Date.now() / 1000)}> - ${kyapan.tag})`);
 db.push(`kayıtlar-${message.author.id}`, `\`${beş_config.tagSymbol} ${Name2}${age ? ` ${beş_config.symbolBeş} ${age}` : ""}\` (${manRoles.map((bes) => `<@&${bes}>`).join(",")} <t:${Math.floor(Date.now() / 1000)}>)`);
-if (tagData && tagData.some(tag => member.user.tag.includes(tag))) {
+if (tagData && tagData.some(tag => member.user.displayName.includes(tag))) {
 
 await member.roles.cache.has(message.guild.roles.premiumSubscriberRole ? message.guild.roles.premiumSubscriberRole.id : "5") ? member.roles.set([message.guild.roles.premiumSubscriberRole.id,...manRoles,...familyRoles]) : member.roles.set([...manRoles,...familyRoles])
 await member.setNickname(`${beş_config.tagSymbol} ${Name2}${age ? ` ${beş_config.symbolBeş} ${age}` : ""}`).catch(e => { })
@@ -89,7 +89,7 @@ db.add(`kadın-${message.author.id}`, 1)
 db.push(`isimler-${member.id}`, `\`${beş_config.tagSymbol} ${Name2}${age ? ` ${beş_config.symbolBeş} ${age}` : ""}\` (${womanRoles.map((bes) => `<@&${bes}>`).join(",")} <t:${Math.floor(Date.now() / 1000)}> - ${kyapan.tag})`);
 db.push(`kayıtlar-${message.author.id}`, `\`${beş_config.tagSymbol} ${Name2}${age ? ` ${beş_config.symbolBeş} ${age}` : ""}\` (${womanRoles.map((bes) => `<@&${bes}>`).join(",")} <t:${Math.floor(Date.now() / 1000)}>)`);
 
-if (tagData && tagData.some(tag => member.user.tag.includes(tag))) {
+if (tagData && tagData.some(tag => member.user.displayName.includes(tag))) {
 await member.roles.cache.has(message.guild.roles.premiumSubscriberRole ? message.guild.roles.premiumSubscriberRole.id : "5") ? member.roles.set([message.guild.roles.premiumSubscriberRole.id,...womanRoles,...familyRoles]) : member.roles.set([...womanRoles,...familyRoles]);
 await member.setNickname(`${beş_config.tagSymbol} ${Name2}${age ? ` ${beş_config.symbolBeş} ${age}` : ""}`).catch(e => { })
 

@@ -15,6 +15,6 @@ module.exports = {
     let sesli = message.guild.members.cache.filter(x => !x.user.bot && x.voice.channel).size
     let boost = message.guild.premiumSubscriptionCount;
     
-    message.reply({ embeds: [beş_embed.setDescription(`> **Sunucumuzda Toplam ${uye} Üye Bulunuyor!**\n> **Toplam ${aktif} Aktif Kişi Bulunuyor!**\n> **Toplam ${sesli} \`(+${bot} Bot)\` Kişi Seste Bulunuyor!**\n> **${boost} Adet Boost Bulunmakta!**${message.guild.members.cache.filter(u => tagData.some(bes => u.user.tag.includes(bes))).size > 0 ? `\n> **Toplam ${message.guild.members.cache.filter(u => tagData.some(bes => u.user.tag.includes(bes))).size} Taglı Üyemiz Bulunmakta!**`: ""}`).setThumbnail(message.guild.iconURL({dynamic:true})).setTitle(`İstatistik`).setURL(`https://linktr.ee/beykant`)] });
+    message.reply({ embeds: [beş_embed.setDescription(`> **Sunucumuzda Toplam ${uye} Üye Bulunuyor!**\n> **Toplam ${aktif} Aktif Kişi Bulunuyor!**\n> **Toplam ${sesli} \`(+${bot} Bot)\` Kişi Seste Bulunuyor!**\n> **${boost} Adet Boost Bulunmakta!**${message.guild.members.cache.filter(u => tagData.some(bes => u.user.displayName.includes(bes))).size > 0 ? `\n> **Toplam ${message.guild.members.cache.filter(u => tagData.some(bes => u.user.displayName.includes(bes))).size} Taglı Üyemiz Bulunmakta!**`: ""}`).setThumbnail(message.guild.iconURL({dynamic:true})).setTitle(`İstatistik`).setURL(`https://linktr.ee/beykant`)] });
     }
 }
